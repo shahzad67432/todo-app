@@ -4,7 +4,7 @@ export default function AddTodo({ setTodo }) {
     const [newTodo, setNewTodo] = useState("");
   
     const addTodo = () => {
-      setTodo((prevTodo) => [...prevTodo, newTodo]);
+      setTodo((prevTodo) => [...prevTodo, {text:newTodo, completed:false}]);
       setNewTodo("");
     };
 
@@ -14,7 +14,6 @@ export default function AddTodo({ setTodo }) {
         setNewTodo(e.target.value)
       }}/>
       <button onClick={addTodo}>Add Todo</button>
-      {/* <button >delete</button> */}
 
     </>
   )
